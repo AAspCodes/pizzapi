@@ -18,13 +18,14 @@ class Address(object):
         country (String): Country
     """
 
-    def __init__(self, street, city, region='', zip='', country=COUNTRY_CANADA, *args):
+    def __init__(self,address):
+        street, city, region, zipcode = address.split(',')
         self.street = street.strip()
         self.city = city.strip()
         self.region = region.strip()
-        self.zip = str(zip).strip()
-        self.urls = Urls(country)
-        self.country = country
+        self.zip = str(zipcode).strip()
+        self.urls = Urls(COUNTRY_USA)
+        self.country = COUNTRY_USA
 
     def __repr__(self):
         return ", ".join([self.street, self.city, self.region, self.zip])

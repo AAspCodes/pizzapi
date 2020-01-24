@@ -14,7 +14,7 @@ class Order(object):
     """
     def __init__(self, store, customer, country="ca"):
         self.store = store
-        self.menu = Menu.from_store(store_id=store.id, country=country)
+        self.menu = Menu.from_store(store_id=store.id)
         self.customer = customer
         self.address = customer.address
         self.urls = Urls(country)

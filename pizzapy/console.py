@@ -42,8 +42,8 @@ class ConsoleInput:
             print("CANADA ADDRESS EXAMPLE: 100 Wellington St, Ottawa, ON, K1A0A9")
 
         address = ConsoleInput.get_valid_input("ADDRESS: ", ConsoleInput.validate_address)
-
-        customer = Customer(last_name, first_name, email, phone, address)
+        stuff = [first_name, last_name, email, phone, address]
+        customer = Customer(stuff=stuff)
         return customer
 
     @staticmethod

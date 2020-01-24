@@ -4,13 +4,15 @@ import json
 class Customer:
     """The Customer who orders a pizza."""
 
-    def __init__(self, fname='', lname='', email='', phone='', address=None):
-        self.first_name = fname.strip()
-        self.last_name = lname.strip()
-        self.email = email.strip()
-        self.phone = str(phone).strip()
-        self.str_address = address
-        self.address = Address(*address.split(','))
+    def __init__(self, stuff):
+        print(stuff)
+        self.first_name = stuff[0].strip()
+        self.last_name = stuff[1].strip()
+        self.email = stuff[2].strip()
+        self.phone = str(stuff[3]).strip()
+        self.str_address = stuff[4]
+        print(self.str_address)
+        self.address = Address(self.str_address)
 
     def save(self, filename="customers/customer1.json"):
         """

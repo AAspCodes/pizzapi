@@ -23,7 +23,7 @@ class CreditCard(object):
     def validate(self):
         is_valid = self.number.isdigit() and len(self.number) == 16 and self.card_type != "" and len(self.expiration) == 4 and self.expiration.isdigit()
         is_valid &= len(self.cvv) == 3 and self.cvv.isdigit()
-        is_valid &= 5 <= len(self.zip) >= 6
+        is_valid &= (len(self.zip) in [5, 6])
         return is_valid
 
     def find_type(self):

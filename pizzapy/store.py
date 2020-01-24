@@ -33,6 +33,7 @@ class Store(object):
 
     def get_menu(self, lang='en'):
         response = request_json(self.urls.menu_url(), store_id=self.id, lang=lang)
+
         menu = Menu(response, self.country)
         return menu
 
